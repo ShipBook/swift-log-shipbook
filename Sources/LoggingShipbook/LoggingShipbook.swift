@@ -7,10 +7,13 @@ import ShipBookSDK
 #if canImport(UIKit)
 
 public struct ShipbookLogHandler: LogHandler {
+  public var label: String
   public var logLevel: Logger.Level
   public var metadata: Logger.Metadata
   
+  
   public init(_ label: String, level: Logger.Level = .trace, metadata: Logger.Metadata = [:]) {
+    self.label = label
     self.logLevel = level
     self.metadata = metadata
   }
@@ -30,15 +33,15 @@ public struct ShipbookLogHandler: LogHandler {
 //    print("the message is \(message)")
     switch level {
       case .trace:
-        ShipBookSDK.Log.v(message.description, tag: source, function: function, file: file ,  line: Int(line))
+        ShipBookSDK.Log.v(message.description, tag: self.label, function: function, file: file ,  line: Int(line))
       case .debug:
-        Log.d(message.description, tag: source, function: function, file: file ,  line: Int(line))
+        Log.d(message.description, tag: self.label, function: function, file: file ,  line: Int(line))
       case .info:
-        Log.i(message.description, tag: source, function: function, file: file ,  line: Int(line))
+        Log.i(message.description, tag: self.label, function: function, file: file ,  line: Int(line))
       case .notice, .warning:
-        Log.w(message.description, tag: source, function: function, file: file ,  line: Int(line))
+        Log.w(message.description, tag: self.label, function: function, file: file ,  line: Int(line))
       case .error, .critical:
-        Log.e(message.description, tag: source, function: function, file: file ,  line: Int(line))
+        Log.e(message.description, tag: self.label, function: function, file: file ,  line: Int(line))
     }
   }
 }
