@@ -3,7 +3,7 @@
 ![Swift](https://img.shields.io/badge/Swift-5.2-orange.svg)
 ![Release](https://img.shields.io/github/v/tag/ShipBook/swift-log-shipbook?label=release&logo=github)
 ![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20tvOS-lightgrey.svg)
-![License](https://img.shields.io/github/license/ShipBook/swift-log-shipbook/LICENSE)
+![License](https://img.shields.io/github/license/ShipBook/swift-log-shipbook)
 
 
 ## About Shipbook
@@ -12,7 +12,7 @@
 ---
 
 ## Requirements
-ShipBook works from SWIFT 4.2, Objective-C and from iOS 10.  
+LoggingShipbook works from SWIFT 5.2  
 
 ## Resources
 * [Shipbook Documentation](https://docs.shipbook.io)
