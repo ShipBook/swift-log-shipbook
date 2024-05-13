@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "shipbooksdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ShipBook/ShipBookSDK-iOS.git",
+      "state" : {
+        "revision" : "6adaaf225c09616bae1eb851505e730d83f6eac7",
+        "version" : "1.2.2"
+      }
+    },
+    {
+      "identity" : "swift-log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-log.git",
+      "state" : {
+        "revision" : "e97a6fcb1ab07462881ac165fdbb37f067e205d5",
+        "version" : "1.5.4"
+      }
+    }
+  ],
+  "version" : 2
+}
