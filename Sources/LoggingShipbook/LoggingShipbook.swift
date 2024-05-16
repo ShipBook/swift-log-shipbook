@@ -9,7 +9,6 @@ import ShipBookSDK
 public struct ShipbookLogHandler: LogHandler {
   public var label: String
   public var logLevel: Logger.Level = .trace
-//  public var metadata: Logger.Metadata = Logger.Metadata()
   
   private var prettyMetadata: String?
   public var metadata = Logger.Metadata() {
@@ -20,7 +19,6 @@ public struct ShipbookLogHandler: LogHandler {
   
   public init(_ label: String) {
     self.label = label
-    print("the label is \(label)")
   }
   
   public subscript(metadataKey metadataKey: String) -> Logger.Metadata.Value? {
