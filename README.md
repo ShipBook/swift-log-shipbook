@@ -1,6 +1,6 @@
 # LoggingShipbook
 
-![Swift](https://img.shields.io/badge/Swift-5.2-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-5.8-orange.svg)
 ![Release](https://img.shields.io/github/v/tag/ShipBook/swift-log-shipbook?label=release&logo=github)
 ![Platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20tvOS-lightgrey.svg)
 ![License](https://img.shields.io/github/license/ShipBook/swift-log-shipbook)
@@ -10,6 +10,10 @@
 [ShipBook](https://www.shipbook.io) gives you the power to remotely gather, search and analyze your user logs and exceptions in the cloud, on a per-user & session basis.
 
 ---
+
+## SwiftLog Introduction
+
+[SwiftLog](https://github.com/apple/swift-log) is a lightweight logging API for Swift that was created by the [Swift Server Working Group](https://www.swift.org/sswg/). It is under apple's umbrella and is a part of the swift server ecosystem, and works on all platforms that Swift supports. It is slowly becoming the standard for logging in Swift. 
 
 ## Integrating with SwiftLog
 
