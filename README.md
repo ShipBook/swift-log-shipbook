@@ -11,19 +11,55 @@
 
 ---
 
-## Requirements
-LoggingShipbook works from SWIFT 5.2  
+## Integrating with SwiftLog
 
-## Resources
-* [Shipbook Documentation](https://docs.shipbook.io)
+### Installation
+To integrate Shipbook with SwiftLog, you need to add the LoggingShipbook package to your project. There are two ways to do this:
 
-## Author
+#### `Package.swift` file dependency
+Add the LoggingShipbook package as a dependency to your `Package.swift` file.
 
-Elisha Sterngold ([ShipBook Ltd.](https://www.shipbook.io))
+```swift
+dependencies: [
+    package(url: "https://github.com/ShipBook/swift-log-shipbook.git", from: "1.0.0")
+]
+```
 
-## License
+#### Xcode integration
+Or under Xcode, go to `File` -> `Swift Packages` -> `Add Package Dependency` and enter the URL for the LoggingShipbook package https://github.com/ShipBook/swift-log-shipbook.git.
 
-LoggingShipbook is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
+### Usage
+Then, you can use the `LoggingShipbook` package to send logs to Shipbook.
 
+```swift
+import Logging
+import LoggingShipbook
 
+let logger = Logger(label: "com.example.MyApp")
 
+ShipBook.start(appId:"YOUR_APP_ID", appKey:"YOUR_APP_KEY")
+LoggingSystem.bootstrap(ShipbookLogHandler.init)
+```
+
+Now you can use SwiftLog as you normally would and all logs will be sent to Shipbook.
+
+```swift
+logger.info("Hello, world!")
+```
+
+## Log Levels
+
+The log levels in SwiftLog are different from those in Shipbook. To map the log levels, you can use the following mapping table:
+
+| SwiftLog Level | Shipbook Level |
+|----------------|----------------|
+| trace          | verbose        |
+| debug          | debug          |
+| info           | info           |
+| notice         | warning        |
+| warning        | warning        |
+| error          | error          |
+| critical       | error          |
+
+## Shipbook iOS Log integration
+For more information about the usage of shipbook and its features, please visit [Shipbook iOS Log integration](https://docs.shipbook.io/ios-log-integration).
