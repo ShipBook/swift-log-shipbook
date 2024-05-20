@@ -41,19 +41,21 @@ public struct ShipbookLogHandler: LogHandler {
     }
 
     let msg = (prettyMetadata ?? "").isEmpty ? "\(message)" : "\(prettyMetadata!) \(message)"
-
+    
+    let severity: Severity?
     switch level {
       case .trace:
-        ShipBookSDK.Log.v(msg, tag: self.label, function: function, file: file ,  line: Int(line))
+        severity = .Verbose
       case .debug:
-        Log.d(msg, tag: self.label, function: function, file: file ,  line: Int(line))
+        severity = .Debug
       case .info:
-        Log.i(msg, tag: self.label, function: function, file: file ,  line: Int(line))
+        severity = .Info
       case .notice, .warning:
-        Log.w(msg, tag: self.label, function: function, file: file ,  line: Int(line))
+        severity = .Warning
       case .error, .critical:
-        Log.e(msg, tag: self.label, function: function, file: file ,  line: Int(line))
+        severity = .Error
     }
+    Log.message(msg: msg, severity: severity!, tag: self.label, function: function, file: file, line: Int(line))
   }
   
   internal static func prepareMetadata(base: Logger.Metadata, explicit: Logger.Metadata?) -> Logger.Metadata? {
