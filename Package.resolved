@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ShipBook/ShipBookSDK-iOS.git",
       "state" : {
-        "revision" : "6adaaf225c09616bae1eb851505e730d83f6eac7",
-        "version" : "1.2.2"
+        "revision" : "cf6285219fadf584c030c9f2beaac7dd7c6af946",
+        "version" : "3.0.0"
       }
     },
     {
